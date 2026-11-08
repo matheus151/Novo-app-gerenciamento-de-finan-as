@@ -363,6 +363,32 @@
         .st-late { color: #fff; background: var(--bad); box-shadow: 0 0 10px color-mix(in srgb, var(--bad) 55%, transparent); }
         .st-today { color: #1a1300; background: var(--warn); }
 
+        /* ---- Fundo colorido por situação: vermelho = a pagar · verde = paga ---- */
+        .grp-items { padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+        .grp-items .qdate { margin: 4px -8px -2px; padding: 8px 16px 2px; background: none; border-top: none; }
+        .grp-items .qdate:first-child { margin-top: -4px; }
+        .row { border-top: none; border-radius: 14px; color: #fff; padding: 13px 14px; transition: transform .1s, filter .15s; }
+        .row:active { transform: scale(0.985); filter: brightness(1.05); background: inherit; }
+        .row.pending { background: linear-gradient(135deg, #EF4757 0%, #C9243A 100%); box-shadow: 0 6px 18px -10px rgba(225, 29, 72, 0.9); }
+        .row.paid { background: linear-gradient(135deg, #1FBF86 0%, #0E8F62 100%); box-shadow: 0 6px 18px -10px rgba(16, 185, 129, 0.9); }
+        .row:active.pending { background: linear-gradient(135deg, #EF4757 0%, #C9243A 100%); }
+        .row:active.paid { background: linear-gradient(135deg, #1FBF86 0%, #0E8F62 100%); }
+        .row .rail { display: none; }
+        .row .chk { border-color: rgba(255,255,255,0.9); }
+        .row.paid .chk { background: #fff; border-color: #fff; box-shadow: none; }
+        .row.paid .chk svg { stroke: #0E8F62; }
+        .row .row-name, .row.paid .row-name { color: #fff; }
+        .row .row-meta { color: rgba(255,255,255,0.82); }
+        .row .row-meta .tag { background: rgba(255,255,255,0.2); border-color: transparent; color: #fff; }
+        .row .row-desc { color: rgba(255,255,255,0.78); }
+        .row .row-val, .row.paid .row-val { color: #fff; }
+        .row .ftag { color: rgba(255,255,255,0.92); }
+        .row .ftag i { box-shadow: 0 0 0 1.5px rgba(255,255,255,0.85); }
+        .row .st-paid { color: #0E8F62; background: #fff; }
+        .row .st-pend { color: #fff; background: rgba(255,255,255,0.22); }
+        .row .st-late { color: #C9243A; background: #fff; box-shadow: none; }
+        .row .st-today { color: #1a1300; background: #FDE047; }
+
         .empty {
             text-align: center; color: var(--muted); padding: 22px 20px; border: 1px dashed var(--border-2); border-radius: 18px; line-height: 1.55; font-size: 14px;
         }
